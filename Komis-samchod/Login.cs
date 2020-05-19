@@ -90,21 +90,25 @@ namespace Komis_samchod
                 SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 adapt.Fill(ds);
-                con.Close();
                 int count = ds.Tables[0].Rows.Count;
                 if (count == 0)
                 {
-                    con.Open();
-                    SqlCommand sqlCmd = new SqlCommand("UserAdd",con);
-                    sqlCmd.CommandType = CommandType.StoredProcedure;
-                    sqlCmd.Parameters.AddWithValue("@username", txt_UserName.Text);
-                    sqlCmd.Parameters.AddWithValue("@password", txt_Password.Text);
-                    sqlCmd.ExecuteNonQuery();
-                    MessageBox.Show("Rejestracja się powiodła!");
+                    SqlCommand cmds = new SqlCommand("INSERT INTO login (username, password) VALUES ('"+txt_UserName.Text+"', '"+txt_Password.Text+"')", con);
+                    try
+                    {
+                        cmds.ExecuteNonQuery();
+                        MessageBox.Show("Rejestracja się powiodła!");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    
                     this.Hide();
                     MainUserPage fm = new MainUserPage();
                     fm.username = txt_UserName.Text;
                     fm.Show();
+                    
                     
                 }
                 else
