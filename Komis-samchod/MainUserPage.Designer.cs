@@ -81,7 +81,7 @@
             this.logout.Text = "wyloguj";
             this.logout.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.logout.UseVisualStyleBackColor = true;
-            this.logout.Click += new System.EventHandler(this.button3_Click);
+            this.logout.Click += new System.EventHandler(this.logout_Click);
             // 
             // browsecars
             // 
@@ -97,6 +97,7 @@
             this.browsecars.Text = "znajdź pojazd";
             this.browsecars.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.browsecars.UseVisualStyleBackColor = true;
+            this.browsecars.Click += new System.EventHandler(this.browsecars_Click);
             // 
             // sell
             // 

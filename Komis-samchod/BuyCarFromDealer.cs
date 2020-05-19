@@ -16,5 +16,10 @@ namespace Komis_samchod
         {
             InitializeComponent();
         }
+
+        private void BuyCarFromDealer_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

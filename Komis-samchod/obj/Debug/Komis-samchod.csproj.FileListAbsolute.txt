@@ -26,3 +26,5 @@ G:\Folder Kuby\Studia\Rok II sem.2\Bazy Danych\projekt\Komis-Samochodowy\Komis-s
 G:\Folder Kuby\Studia\Rok II sem.2\Bazy Danych\projekt\Komis-Samochodowy\Komis-samchod\obj\Debug\Komis-samchod.csproj.CoreCompileInputs.cache
 G:\Folder Kuby\Studia\Rok II sem.2\Bazy Danych\projekt\Komis-Samochodowy\Komis-samchod\obj\Debug\Komis-samchod.exe
 G:\Folder Kuby\Studia\Rok II sem.2\Bazy Danych\projekt\Komis-Samochodowy\Komis-samchod\obj\Debug\Komis-samchod.pdb
+G:\Folder Kuby\Studia\Rok II sem.2\Bazy Danych\projekt\Komis-Samochodowy\Komis-samchod\obj\Debug\Komis_samchod.BuyCarFromDealer.resources
+G:\Folder Kuby\Studia\Rok II sem.2\Bazy Danych\projekt\Komis-Samochodowy\Komis-samchod\obj\Debug\Komis_samchod.SellCarToDealer.resources

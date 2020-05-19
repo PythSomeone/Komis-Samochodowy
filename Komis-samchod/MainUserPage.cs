@@ -18,11 +18,6 @@ namespace Komis_samchod
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -46,6 +41,18 @@ namespace Komis_samchod
         private void welcomemessage_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void browsecars_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void logout_Click(object sender, EventArgs e)
+        {
+            Login lo = new Login();
+            lo.Show();
+            this.Close();
         }
     }
 }

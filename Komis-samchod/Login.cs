@@ -35,7 +35,7 @@ namespace Komis_samchod
             {
                 //Create SqlConnection
                 SqlConnection con = new SqlConnection(cs);
-                SqlCommand cmd = new SqlCommand("Select * from login_info where UserName=@username and Password=@password", con);
+                SqlCommand cmd = new SqlCommand("Select * from login where UserName=@username and Password=@password", con);
                 cmd.Parameters.AddWithValue("@username", txt_UserName.Text);
                 cmd.Parameters.AddWithValue("@password", txt_Password.Text);
                 con.Open();
@@ -48,14 +48,70 @@ namespace Komis_samchod
                 {
                     MessageBox.Show("Logowanie się powiodło!");
                     this.Hide();
-                    MainUserPage fm = new MainUserPage();
-                    fm.username = txt_UserName.Text;
-                    fm.Show();
+                    if(!Convert.ToBoolean(ds.Tables[0].Rows[0]["modpermission"]))
+                    {
+                        MainUserPage fm = new MainUserPage();
+                        fm.username = txt_UserName.Text;
+                        fm.Show();
+                    }
+                    if (Convert.ToBoolean(ds.Tables[0].Rows[0]["modpermission"]))
+                    {
+                        ManagerPage fm = new ManagerPage();
+                        fm.username = txt_UserName.Text;
+                        fm.Show();
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Logowanie nieudane!");
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void register_Click(object sender, EventArgs e)
+        {
+            if (txt_UserName.Text == "" || txt_Password.Text == "")
+            {
+                MessageBox.Show("Wpisz nazwę użytkownia i hasło");
+                return;
+            }
+            try
+            {
+                //Create SqlConnection
+                SqlConnection con = new SqlConnection(cs);
+                SqlCommand cmd = new SqlCommand("Select * from login where UserName=@username and Password=@password", con);
+                cmd.Parameters.AddWithValue("@username", txt_UserName.Text);
+                cmd.Parameters.AddWithValue("@password", txt_Password.Text);
+                con.Open();
+                SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adapt.Fill(ds);
+                con.Close();
+                int count = ds.Tables[0].Rows.Count;
+                if (count == 0)
+                {
+                    con.Open();
+                    SqlCommand sqlCmd = new SqlCommand("UserAdd",con);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    sqlCmd.Parameters.AddWithValue("@username", txt_UserName.Text);
+                    sqlCmd.Parameters.AddWithValue("@password", txt_Password.Text);
+                    sqlCmd.ExecuteNonQuery();
+                    MessageBox.Show("Rejestracja się powiodła!");
+                    this.Hide();
+                    MainUserPage fm = new MainUserPage();
+                    fm.username = txt_UserName.Text;
+                    fm.Show();
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Rejestracja się nie powiodła!");
+                }
+                con.Close();
             }
             catch (Exception ex)
             {

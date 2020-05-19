@@ -35,6 +35,7 @@ namespace Komis_samchod
             this.txt_Password = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.register = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // log_in
@@ -79,11 +80,22 @@ namespace Komis_samchod
             this.label2.TabIndex = 4;
             this.label2.Text = "Hasło";
             // 
+            // register
+            // 
+            this.register.Location = new System.Drawing.Point(167, 183);
+            this.register.Name = "register";
+            this.register.Size = new System.Drawing.Size(200, 30);
+            this.register.TabIndex = 5;
+            this.register.Text = "Rejestracja";
+            this.register.UseVisualStyleBackColor = true;
+            this.register.Click += new System.EventHandler(this.register_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 281);
+            this.Controls.Add(this.register);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_Password);
@@ -104,6 +116,7 @@ namespace Komis_samchod
         private System.Windows.Forms.TextBox txt_Password;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button register;
     }
 }
 
