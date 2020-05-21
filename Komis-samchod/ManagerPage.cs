@@ -50,7 +50,7 @@ namespace Komis_samchod
 
         private void logout_Click(object sender, EventArgs e)
         {
-            Login lo = new Login();
+            LoginPage lo = new LoginPage();
             lo.Show();
             this.Close();
         }

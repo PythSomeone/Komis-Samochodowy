@@ -45,14 +45,21 @@ namespace Komis_samchod
 
         private void browsecars_Click(object sender, EventArgs e)
         {
-
+            BuyCarFromDealer buy = new BuyCarFromDealer();
+            buy.Show();
+            this.Close();
         }
 
         private void logout_Click(object sender, EventArgs e)
         {
-            Login lo = new Login();
+            LoginPage lo = new LoginPage();
             lo.Show();
             this.Close();
+        }
+
+        private void sendoffer_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

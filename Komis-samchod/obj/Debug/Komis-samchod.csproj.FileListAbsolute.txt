@@ -18,7 +18,6 @@ G:\Folder Kuby\Studia\Rok II sem.2\Bazy Danych\projekt\Komis-Samochodowy\Komis-s
 G:\Folder Kuby\Studia\Rok II sem.2\Bazy Danych\projekt\Komis-Samochodowy\Komis-samchod\bin\Debug\Komis-samchod.exe
 G:\Folder Kuby\Studia\Rok II sem.2\Bazy Danych\projekt\Komis-Samochodowy\Komis-samchod\bin\Debug\Komis-samchod.pdb
 G:\Folder Kuby\Studia\Rok II sem.2\Bazy Danych\projekt\Komis-Samochodowy\Komis-samchod\obj\Debug\Komis-samchod.csprojAssemblyReference.cache
-G:\Folder Kuby\Studia\Rok II sem.2\Bazy Danych\projekt\Komis-Samochodowy\Komis-samchod\obj\Debug\Komis_samchod.Login.resources
 G:\Folder Kuby\Studia\Rok II sem.2\Bazy Danych\projekt\Komis-Samochodowy\Komis-samchod\obj\Debug\Komis_samchod.ManagerPage.resources
 G:\Folder Kuby\Studia\Rok II sem.2\Bazy Danych\projekt\Komis-Samochodowy\Komis-samchod\obj\Debug\Komis_samchod.MainUserPage.resources
 G:\Folder Kuby\Studia\Rok II sem.2\Bazy Danych\projekt\Komis-Samochodowy\Komis-samchod\obj\Debug\Komis_samchod.Properties.Resources.resources
@@ -28,3 +27,9 @@ G:\Folder Kuby\Studia\Rok II sem.2\Bazy Danych\projekt\Komis-Samochodowy\Komis-s
 G:\Folder Kuby\Studia\Rok II sem.2\Bazy Danych\projekt\Komis-Samochodowy\Komis-samchod\obj\Debug\Komis-samchod.pdb
 G:\Folder Kuby\Studia\Rok II sem.2\Bazy Danych\projekt\Komis-Samochodowy\Komis-samchod\obj\Debug\Komis_samchod.BuyCarFromDealer.resources
 G:\Folder Kuby\Studia\Rok II sem.2\Bazy Danych\projekt\Komis-Samochodowy\Komis-samchod\obj\Debug\Komis_samchod.SellCarToDealer.resources
+G:\Folder Kuby\Studia\Rok II sem.2\Bazy Danych\projekt\Komis-Samochodowy\Komis-samchod\obj\Debug\Komis_samchod.LoginPage.resources
+G:\Folder Kuby\Studia\Rok II sem.2\Bazy Danych\projekt\Komis-Samochodowy\Komis-samchod\bin\Debug\EntityFramework.dll
+G:\Folder Kuby\Studia\Rok II sem.2\Bazy Danych\projekt\Komis-Samochodowy\Komis-samchod\bin\Debug\EntityFramework.SqlServer.dll
+G:\Folder Kuby\Studia\Rok II sem.2\Bazy Danych\projekt\Komis-Samochodowy\Komis-samchod\bin\Debug\EntityFramework.xml
+G:\Folder Kuby\Studia\Rok II sem.2\Bazy Danych\projekt\Komis-Samochodowy\Komis-samchod\bin\Debug\EntityFramework.SqlServer.xml
+G:\Folder Kuby\Studia\Rok II sem.2\Bazy Danych\projekt\Komis-Samochodowy\Komis-samchod\obj\Debug\Komis-samchod.csproj.CopyComplete
