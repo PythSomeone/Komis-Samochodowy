@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainUserPage));
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.logout = new System.Windows.Forms.Button();
+            this.sendoffer = new System.Windows.Forms.Button();
+            this.showtrans = new System.Windows.Forms.Button();
             this.browsecars = new System.Windows.Forms.Button();
             this.sell = new System.Windows.Forms.Button();
+            this.logout = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.welcomemessage = new System.Windows.Forms.Label();
-            this.showtrans = new System.Windows.Forms.Button();
-            this.sendoffer = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -70,23 +70,36 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1068, 388);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
-            // logout
+            // sendoffer
             // 
-            this.logout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.logout.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.logout.Font = new System.Drawing.Font("Unispace", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.logout.Image = ((System.Drawing.Image)(resources.GetObject("logout.Image")));
-            this.logout.Location = new System.Drawing.Point(715, 198);
-            this.logout.Margin = new System.Windows.Forms.Padding(4);
-            this.logout.Name = "logout";
-            this.logout.Size = new System.Drawing.Size(348, 186);
-            this.logout.TabIndex = 2;
-            this.logout.Text = "wyloguj";
-            this.logout.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.logout.UseVisualStyleBackColor = true;
-            this.logout.Click += new System.EventHandler(this.logout_Click);
+            this.sendoffer.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.sendoffer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sendoffer.Font = new System.Drawing.Font("Unispace", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sendoffer.Image = ((System.Drawing.Image)(resources.GetObject("sendoffer.Image")));
+            this.sendoffer.Location = new System.Drawing.Point(4, 198);
+            this.sendoffer.Margin = new System.Windows.Forms.Padding(4);
+            this.sendoffer.Name = "sendoffer";
+            this.sendoffer.Size = new System.Drawing.Size(327, 186);
+            this.sendoffer.TabIndex = 4;
+            this.sendoffer.Text = "złóż ofertę";
+            this.sendoffer.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.sendoffer.UseVisualStyleBackColor = true;
+            this.sendoffer.Click += new System.EventHandler(this.sendoffer_Click);
+            // 
+            // showtrans
+            // 
+            this.showtrans.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.showtrans.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.showtrans.Font = new System.Drawing.Font("Unispace", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showtrans.Image = ((System.Drawing.Image)(resources.GetObject("showtrans.Image")));
+            this.showtrans.Location = new System.Drawing.Point(715, 4);
+            this.showtrans.Margin = new System.Windows.Forms.Padding(4);
+            this.showtrans.Name = "showtrans";
+            this.showtrans.Size = new System.Drawing.Size(327, 186);
+            this.showtrans.TabIndex = 3;
+            this.showtrans.Text = "pokaż transakcje";
+            this.showtrans.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.showtrans.UseVisualStyleBackColor = true;
             // 
             // browsecars
             // 
@@ -121,6 +134,24 @@
             this.sell.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.sell.UseVisualStyleBackColor = true;
             // 
+            // logout
+            // 
+            this.logout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.logout.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logout.Font = new System.Drawing.Font("Unispace", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.logout.Image = ((System.Drawing.Image)(resources.GetObject("logout.Image")));
+            this.logout.Location = new System.Drawing.Point(715, 198);
+            this.logout.Margin = new System.Windows.Forms.Padding(4);
+            this.logout.Name = "logout";
+            this.logout.Size = new System.Drawing.Size(348, 186);
+            this.logout.TabIndex = 2;
+            this.logout.Text = "wyloguj";
+            this.logout.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.logout.UseVisualStyleBackColor = true;
+            this.logout.Click += new System.EventHandler(this.logout_Click);
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
@@ -132,6 +163,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1068, 100);
             this.tableLayoutPanel2.TabIndex = 3;
+            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // welcomemessage
             // 
@@ -143,37 +175,6 @@
             this.welcomemessage.Text = "Witaj";
             this.welcomemessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.welcomemessage.Click += new System.EventHandler(this.welcomemessage_Click);
-            // 
-            // showtrans
-            // 
-            this.showtrans.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.showtrans.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.showtrans.Font = new System.Drawing.Font("Unispace", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showtrans.Image = ((System.Drawing.Image)(resources.GetObject("showtrans.Image")));
-            this.showtrans.Location = new System.Drawing.Point(715, 4);
-            this.showtrans.Margin = new System.Windows.Forms.Padding(4);
-            this.showtrans.Name = "showtrans";
-            this.showtrans.Size = new System.Drawing.Size(327, 186);
-            this.showtrans.TabIndex = 3;
-            this.showtrans.Text = "pokaż transakcje";
-            this.showtrans.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.showtrans.UseVisualStyleBackColor = true;
-            // 
-            // sendoffer
-            // 
-            this.sendoffer.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.sendoffer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sendoffer.Font = new System.Drawing.Font("Unispace", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sendoffer.Image = ((System.Drawing.Image)(resources.GetObject("sendoffer.Image")));
-            this.sendoffer.Location = new System.Drawing.Point(4, 198);
-            this.sendoffer.Margin = new System.Windows.Forms.Padding(4);
-            this.sendoffer.Name = "sendoffer";
-            this.sendoffer.Size = new System.Drawing.Size(327, 186);
-            this.sendoffer.TabIndex = 4;
-            this.sendoffer.Text = "złóż ofertę";
-            this.sendoffer.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.sendoffer.UseVisualStyleBackColor = true;
-            this.sendoffer.Click += new System.EventHandler(this.sendoffer_Click);
             // 
             // MainUserPage
             // 

@@ -12,9 +12,15 @@ namespace Komis_samchod
 {
     public partial class SellCarToDealer : Form
     {
+        public User user;
         public SellCarToDealer()
         {
             InitializeComponent();
+        }
+
+        private void SellCarToDealer_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

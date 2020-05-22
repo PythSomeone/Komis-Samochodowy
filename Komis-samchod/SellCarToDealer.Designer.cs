@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "SellCarToDealer";
             this.Text = "SellCarToDealer";
+            this.Load += new System.EventHandler(this.SellCarToDealer_Load);
             this.ResumeLayout(false);
 
         }

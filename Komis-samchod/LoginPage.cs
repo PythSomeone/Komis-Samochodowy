@@ -13,6 +13,8 @@ namespace Komis_samchod
 {
     public partial class LoginPage : Form
     {
+        User user;
+        string cs = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|Database1.mdf;Integrated Security=True;";
         public LoginPage()
         {
             InitializeComponent();
@@ -21,9 +23,6 @@ namespace Komis_samchod
         {
 
         }
-        //Connection String
-        string cs = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|Database1.mdf;Integrated Security=True;";
-        //btn_Submit Click event
         private void button1_Click(object sender, EventArgs e)
         {
             if (txt_UserName.Text == "" || txt_Password.Text == "")
@@ -48,19 +47,24 @@ namespace Komis_samchod
                 if (count == 1)
                 {
                     MessageBox.Show("Logowanie się powiodło!");
+                    int id = Convert.ToInt32(ds.Tables[0].Rows[0]["id"]);
+                    Boolean mod = Convert.ToBoolean(ds.Tables[0].Rows[0]["modpermission"]);
+                    String name = Convert.ToString(ds.Tables[0].Rows[0]["username"]);
+                    User user = new User(name, mod, id);
                     this.Hide();
                     if(!Convert.ToBoolean(ds.Tables[0].Rows[0]["modpermission"]))
                     {
                         MainUserPage fm = new MainUserPage();
-                        fm.username = txt_UserName.Text;
+                        fm.user = user;
                         fm.Show();
                     }
                     if (Convert.ToBoolean(ds.Tables[0].Rows[0]["modpermission"]))
                     {
                         ManagerPage fm = new ManagerPage();
-                        fm.username = txt_UserName.Text;
+                        fm.user= user;
                         fm.Show();
                     }
+
                 }
                 else
                 {
@@ -123,10 +127,13 @@ namespace Komis_samchod
                     {
                         MessageBox.Show(ex.Message);
                     }
-                    
+                    int id = Convert.ToInt32(ds.Tables[0].Rows[0]["id"]);
+                    Boolean mod = Convert.ToBoolean(ds.Tables[0].Rows[0]["modpermission"]);
+                    String name = Convert.ToString(ds.Tables[0].Rows[0]["username"]);
+                    User user = new User(name, mod, id);
                     this.Hide();
                     MainUserPage fm = new MainUserPage();
-                    fm.username = txt_UserName.Text;
+                    fm.user.name = this.user.name;
                     fm.Show();
                     
                     

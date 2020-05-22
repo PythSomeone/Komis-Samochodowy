@@ -12,7 +12,7 @@ namespace Komis_samchod
 {
     public partial class ManagerPage : Form
     {
-        public String username;
+        public User user;
         public ManagerPage()
         {
             InitializeComponent();
@@ -25,7 +25,7 @@ namespace Komis_samchod
 
         private void ManagerPage_Load(object sender, EventArgs e)
         {
-            welcomemessage.Text = "Witaj " + username + "!";
+            welcomemessage.Text = "Witaj " + user.name + "!";
         }
 
         private void label2_Click(object sender, EventArgs e)

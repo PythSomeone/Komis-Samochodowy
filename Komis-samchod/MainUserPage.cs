@@ -12,7 +12,7 @@ namespace Komis_samchod
 {
     public partial class MainUserPage : Form
     {
-        public String username;
+        public User user;
         public MainUserPage()
         {
             InitializeComponent();
@@ -25,7 +25,7 @@ namespace Komis_samchod
 
         private void MainUserPage_Load(object sender, EventArgs e)
         {
-            welcomemessage.Text = "Witaj " + username + "!";
+            welcomemessage.Text = "Witaj " + user.name + "!";
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -46,6 +46,7 @@ namespace Komis_samchod
         private void browsecars_Click(object sender, EventArgs e)
         {
             BuyCarFromDealer buy = new BuyCarFromDealer();
+            buy.user = user;
             buy.Show();
             this.Close();
         }
@@ -58,6 +59,14 @@ namespace Komis_samchod
         }
 
         private void sendoffer_Click(object sender, EventArgs e)
+        {
+            SellCarToDealer sell = new SellCarToDealer();
+            sell.user = user;
+            sell.Show();
+            this.Close();
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
