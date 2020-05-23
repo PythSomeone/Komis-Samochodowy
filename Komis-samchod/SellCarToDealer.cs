@@ -57,6 +57,7 @@ namespace Komis_samchod
                 DataTable dtbl = new DataTable();
                 adapt.Fill(dtbl);
                 int car_id = Convert.ToInt32(dtbl.Rows[0][0]);
+                car_id -= 1;
                 MessageBox.Show("" + car_id);
                 
                 SqlCommand cmds = new SqlCommand("INSERT INTO [transaction] (client_id, car_id, date, value, type) VALUES ( CONVERT(INT, @client_id), CONVERT(INT, @car_id), @date, CONVERT(INT, @value) , 0)", con);

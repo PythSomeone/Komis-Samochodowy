@@ -26,7 +26,7 @@ namespace Komis_samchod
             {
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("SELECT * FROM [transactions] WHERE client_id = @client_id", con);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM [transaction] WHERE client_id = @client_id", con);
                 cmd.Parameters.AddWithValue("@client_id", user.id);
 
                 try
@@ -51,6 +51,7 @@ namespace Komis_samchod
         {
             using (SqlConnection con = new SqlConnection(cs))
             {
+                con.Open();
                 DataTable dtbl = new DataTable();
                 
                 if (transdatagrid.SelectedCells.Count > 0)
@@ -59,9 +60,13 @@ namespace Komis_samchod
                     int selectedrowindex = transdatagrid.SelectedCells[0].RowIndex;
                     DataGridViewRow selectedRow = transdatagrid.Rows[selectedrowindex];
                     int car_id = Convert.ToInt32(selectedRow.Cells["car_id"].Value);
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM cars WHERE id = @car_id", con);
-                    cmd.Parameters.AddWithValue("@client_id", car_id);
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM car WHERE id = @car_id", con);
+                    cmd.Parameters.AddWithValue("@car_id", car_id);
+                    SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                    adapt.Fill(append);
                     dtbl.Merge(append);
+
+
                     try
                     {
                         cmd.ExecuteNonQuery();
@@ -70,9 +75,10 @@ namespace Komis_samchod
                     {
                         MessageBox.Show(ex.Message);
                     }
+
                 }
-                transdatagrid.DataSource = dtbl;
-                transdatagrid.ReadOnly = true;
+                cardatagrid.DataSource = dtbl;
+                cardatagrid.ReadOnly = true;
             }
 
 
