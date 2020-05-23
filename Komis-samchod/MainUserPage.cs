@@ -70,5 +70,18 @@ namespace Komis_samchod
         {
 
         }
+
+        private void sell_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void showtrans_Click(object sender, EventArgs e)
+        {
+            ShowTransactions trans = new ShowTransactions();
+            trans.user = user;
+            trans.Show();
+            this.Close();
+        }
     }
 }

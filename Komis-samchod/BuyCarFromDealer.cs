@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Threading;
 
 namespace Komis_samchod
 {
@@ -31,7 +32,7 @@ namespace Komis_samchod
             {
                 con.Open();
                 SqlCommand cmd = new SqlCommand
-                ("SELECT * FROM car WHERE(brand LIKE @brand AND model LIKE @model AND color LIKE @color AND year LIKE CONVERT(varchar(50), @year) AND price >= ISNULL(CONVERT(int, @pricemin), price) AND price <= ISNULL(CONVERT(int, @pricemax), price))", con);
+                ("SELECT * FROM car WHERE(brand LIKE @brand AND available = 1 AND model LIKE @model AND color LIKE @color AND year LIKE CONVERT(varchar(50), @year) AND price >= ISNULL(CONVERT(int, @pricemin), price) AND price <= ISNULL(CONVERT(int, @pricemax), price))", con);
 
                 if (!String.IsNullOrEmpty(txt_brand.Text))
                     cmd.Parameters.AddWithValue("@brand", txt_brand.Text);
@@ -83,23 +84,32 @@ namespace Komis_samchod
             {
                 con.Open();
                 SqlCommand cmd = new SqlCommand
-                ("SELECT * FROM car WHERE id = @id", con);
+                ("SELECT * FROM car WHERE id = @id AND available = 1", con);
+
 
                 if (!String.IsNullOrEmpty(txt_id.Text))
+                {
                     cmd.Parameters.AddWithValue("@id", txt_id.Text);
+                    SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                    DataTable dtbl = new DataTable();
+                    adapt.Fill(dtbl);
+                    int index = dtbl.Rows.Count;
+                    if (index == 1)
+                    {
+                        ConfirmPurchase buycar = new ConfirmPurchase();
+                        buycar.user = user;
+                        buycar.cartobuygrid.DataSource = dtbl;
+                        buycar.cartobuygrid.ReadOnly = true;
+                        buycar.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Pojazd z podanym id nie istnieje");
+                    }
+                }
                 else
-                    cmd.Parameters.AddWithValue("@id", "%");
-
-                ConfirmPurchase buycar = new ConfirmPurchase();
-                buycar.user = user;
-                SqlDataAdapter adapt = new SqlDataAdapter(cmd);
-                DataTable dtbl = new DataTable();
-                adapt.Fill(dtbl);
-                buycar.cartobuygrid.DataSource = dtbl;
-                buycar.cartobuygrid.ReadOnly = true;
-                buycar.Show();
-                this.Close();
-
+                    MessageBox.Show("Wprowadź id pojazdu, który chcesz kupić");
 
 
             }

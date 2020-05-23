@@ -34,7 +34,6 @@
             this.sendoffer = new System.Windows.Forms.Button();
             this.showtrans = new System.Windows.Forms.Button();
             this.browsecars = new System.Windows.Forms.Button();
-            this.sell = new System.Windows.Forms.Button();
             this.logout = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.welcomemessage = new System.Windows.Forms.Label();
@@ -57,11 +56,10 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel1.Controls.Add(this.sendoffer, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.showtrans, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.browsecars, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.sell, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.logout, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.sendoffer, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 129);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -76,7 +74,7 @@
             this.sendoffer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sendoffer.Font = new System.Drawing.Font("Unispace", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sendoffer.Image = ((System.Drawing.Image)(resources.GetObject("sendoffer.Image")));
-            this.sendoffer.Location = new System.Drawing.Point(4, 198);
+            this.sendoffer.Location = new System.Drawing.Point(359, 4);
             this.sendoffer.Margin = new System.Windows.Forms.Padding(4);
             this.sendoffer.Name = "sendoffer";
             this.sendoffer.Size = new System.Drawing.Size(327, 186);
@@ -100,6 +98,7 @@
             this.showtrans.Text = "pokaż transakcje";
             this.showtrans.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.showtrans.UseVisualStyleBackColor = true;
+            this.showtrans.Click += new System.EventHandler(this.showtrans_Click);
             // 
             // browsecars
             // 
@@ -116,23 +115,6 @@
             this.browsecars.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.browsecars.UseVisualStyleBackColor = true;
             this.browsecars.Click += new System.EventHandler(this.browsecars_Click);
-            // 
-            // sell
-            // 
-            this.sell.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.sell.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.sell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sell.Font = new System.Drawing.Font("Unispace", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sell.ForeColor = System.Drawing.Color.Black;
-            this.sell.Image = ((System.Drawing.Image)(resources.GetObject("sell.Image")));
-            this.sell.Location = new System.Drawing.Point(359, 4);
-            this.sell.Margin = new System.Windows.Forms.Padding(4);
-            this.sell.Name = "sell";
-            this.sell.Size = new System.Drawing.Size(347, 186);
-            this.sell.TabIndex = 1;
-            this.sell.Text = "sprzedaj pojazd";
-            this.sell.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.sell.UseVisualStyleBackColor = true;
             // 
             // logout
             // 
@@ -202,7 +184,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button logout;
         private System.Windows.Forms.Button browsecars;
-        private System.Windows.Forms.Button sell;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label welcomemessage;
         private System.Windows.Forms.Button sendoffer;

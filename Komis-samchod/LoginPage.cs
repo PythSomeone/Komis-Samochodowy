@@ -13,7 +13,7 @@ namespace Komis_samchod
 {
     public partial class LoginPage : Form
     {
-        User user;
+        public User user;
         string cs = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|Database1.mdf;Integrated Security=True;";
         public LoginPage()
         {

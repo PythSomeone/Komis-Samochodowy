@@ -45,6 +45,7 @@
             this.txt_costmax = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.buycarbtn = new System.Windows.Forms.Button();
+            this.backtbn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -157,7 +158,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(349, 420);
+            this.label6.Location = new System.Drawing.Point(9, 423);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(143, 15);
             this.label6.TabIndex = 12;
@@ -166,7 +167,7 @@
             // txt_id
             // 
             this.txt_id.BackColor = System.Drawing.Color.White;
-            this.txt_id.Location = new System.Drawing.Point(516, 418);
+            this.txt_id.Location = new System.Drawing.Point(172, 421);
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(100, 20);
             this.txt_id.TabIndex = 13;
@@ -191,7 +192,7 @@
             // buycarbtn
             // 
             this.buycarbtn.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buycarbtn.Location = new System.Drawing.Point(634, 416);
+            this.buycarbtn.Location = new System.Drawing.Point(296, 419);
             this.buycarbtn.Name = "buycarbtn";
             this.buycarbtn.Size = new System.Drawing.Size(154, 23);
             this.buycarbtn.TabIndex = 16;
@@ -199,11 +200,22 @@
             this.buycarbtn.UseVisualStyleBackColor = true;
             this.buycarbtn.Click += new System.EventHandler(this.buycarbtn_Click);
             // 
+            // backtbn
+            // 
+            this.backtbn.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.backtbn.Location = new System.Drawing.Point(634, 410);
+            this.backtbn.Name = "backtbn";
+            this.backtbn.Size = new System.Drawing.Size(155, 31);
+            this.backtbn.TabIndex = 17;
+            this.backtbn.Text = "wróć";
+            this.backtbn.UseVisualStyleBackColor = true;
+            // 
             // BuyCarFromDealer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.backtbn);
             this.Controls.Add(this.buycarbtn);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txt_costmax);
@@ -249,5 +261,6 @@
         private System.Windows.Forms.TextBox txt_costmax;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button buycarbtn;
+        private System.Windows.Forms.Button backtbn;
     }
 }

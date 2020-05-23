@@ -40,7 +40,7 @@ namespace Komis_samchod
                 int value = Convert.ToInt32(cartobuygrid.Rows[0].Cells["price"].Value);
                 DateTime date = DateTime.Today;
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO transaction (client_id, car_id, date, value, accepted) VALUES (@client_id, @car_id, @date, @value, 1)", con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO [transaction] (client_id, car_id, date, value, accepted) VALUES (@client_id,  @car_id, @date, @value, 1)", con);
                 cmd.Parameters.AddWithValue("@client_id", user.id);
                 cmd.Parameters.AddWithValue("@car_id", car_id);
                 cmd.Parameters.AddWithValue("@value", value);
@@ -56,7 +56,8 @@ namespace Komis_samchod
                     MessageBox.Show("Zakup się nie powiódł!");
                     MessageBox.Show(ex.Message);
                 }
-                SqlCommand cmds = new SqlCommand("DELETE FROM car WHERE id = @car_id", con);
+                //SqlCommand cmds = new SqlCommand("DELETE FROM car WHERE id = CONVERT(int, @car_id)", con);
+                SqlCommand cmds = new SqlCommand("UPDATE car SET available = 0 WHERE id = @car_id;", con);
                 cmds.Parameters.AddWithValue("@car_id", car_id);
                 try
                 {
@@ -66,15 +67,20 @@ namespace Komis_samchod
                 {
                     MessageBox.Show(ex.Message);
                 }
+
                 if (user.mod == true)
                 {
                     ManagerPage menu = new ManagerPage();
                     menu.user = user;
+                    menu.Show();
+                    this.Close();
                 }
                 if (user.mod == false)
                 {
                     MainUserPage menu = new MainUserPage();
                     menu.user = user;
+                    menu.Show();
+                    this.Close();
                 }
             }
         }

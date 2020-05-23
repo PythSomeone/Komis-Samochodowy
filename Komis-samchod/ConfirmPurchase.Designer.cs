@@ -38,9 +38,9 @@
             // cartobuygrid
             // 
             this.cartobuygrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cartobuygrid.Location = new System.Drawing.Point(25, 78);
+            this.cartobuygrid.Location = new System.Drawing.Point(25, 45);
             this.cartobuygrid.Name = "cartobuygrid";
-            this.cartobuygrid.Size = new System.Drawing.Size(751, 53);
+            this.cartobuygrid.Size = new System.Drawing.Size(751, 86);
             this.cartobuygrid.TabIndex = 0;
             this.cartobuygrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cartobuygrid_CellContentClick);
             // 
