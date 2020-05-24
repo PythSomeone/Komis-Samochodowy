@@ -75,6 +75,7 @@
             // 
             // txt_price
             // 
+            this.txt_price.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txt_price.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txt_price.Location = new System.Drawing.Point(139, 123);
             this.txt_price.Name = "txt_price";
@@ -83,6 +84,7 @@
             // 
             // txt_year
             // 
+            this.txt_year.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txt_year.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txt_year.Location = new System.Drawing.Point(139, 93);
             this.txt_year.Name = "txt_year";
@@ -91,6 +93,7 @@
             // 
             // txt_color
             // 
+            this.txt_color.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txt_color.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txt_color.Location = new System.Drawing.Point(139, 63);
             this.txt_color.Name = "txt_color";
@@ -99,6 +102,7 @@
             // 
             // txt_model
             // 
+            this.txt_model.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txt_model.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txt_model.Location = new System.Drawing.Point(139, 33);
             this.txt_model.Name = "txt_model";
@@ -107,6 +111,7 @@
             // 
             // txt_brand
             // 
+            this.txt_brand.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txt_brand.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txt_brand.Location = new System.Drawing.Point(139, 3);
             this.txt_brand.Name = "txt_brand";
@@ -183,6 +188,7 @@
             this.backtbn.TabIndex = 2;
             this.backtbn.Text = "wróć";
             this.backtbn.UseVisualStyleBackColor = true;
+            this.backtbn.Click += new System.EventHandler(this.backtbn_Click);
             // 
             // SellCarToDealer
             // 
@@ -192,6 +198,7 @@
             this.Controls.Add(this.backtbn);
             this.Controls.Add(this.submitbtn);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SellCarToDealer";
             this.Text = "SellCarToDealer";
             this.Load += new System.EventHandler(this.SellCarToDealer_Load);

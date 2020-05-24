@@ -41,7 +41,7 @@
             this.transdatagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.transdatagrid.Location = new System.Drawing.Point(24, 31);
             this.transdatagrid.Name = "transdatagrid";
-            this.transdatagrid.Size = new System.Drawing.Size(747, 163);
+            this.transdatagrid.Size = new System.Drawing.Size(750, 160);
             this.transdatagrid.TabIndex = 0;
             // 
             // backtbn
@@ -60,7 +60,7 @@
             this.cardatagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.cardatagrid.Location = new System.Drawing.Point(24, 200);
             this.cardatagrid.Name = "cardatagrid";
-            this.cardatagrid.Size = new System.Drawing.Size(747, 163);
+            this.cardatagrid.Size = new System.Drawing.Size(750, 160);
             this.cardatagrid.TabIndex = 4;
             // 
             // showcarsbtn
@@ -83,6 +83,7 @@
             this.Controls.Add(this.cardatagrid);
             this.Controls.Add(this.backtbn);
             this.Controls.Add(this.transdatagrid);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ShowTransactions";
             this.Text = "ShowTransactions";
             this.Load += new System.EventHandler(this.ShowTransactions_Load);

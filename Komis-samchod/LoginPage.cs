@@ -21,7 +21,7 @@ namespace Komis_samchod
         }
         private void Login_Load(object sender, EventArgs e)
         {
-
+            txt_Password.PasswordChar = '*';
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -151,6 +151,11 @@ namespace Komis_samchod
             }
             
 
+        }
+
+        private void exitbtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

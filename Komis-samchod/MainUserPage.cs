@@ -83,5 +83,13 @@ namespace Komis_samchod
             trans.Show();
             this.Close();
         }
+
+        private void changeinfobtn_Click(object sender, EventArgs e)
+        {
+            AccountDetails acc = new AccountDetails();
+            acc.user = user;
+            acc.Show();
+            this.Close();
+        }
     }
 }

@@ -31,9 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerPage));
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.browsecars = new System.Windows.Forms.Button();
+            this.addcarbtn = new System.Windows.Forms.Button();
+            this.acceptcarsbtn = new System.Windows.Forms.Button();
             this.logout = new System.Windows.Forms.Button();
-            this.addcar = new System.Windows.Forms.Button();
-            this.sell = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.welcomemessage = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
@@ -55,15 +56,66 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Controls.Add(this.logout, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.addcar, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.sell, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 308);
+            this.tableLayoutPanel1.Controls.Add(this.browsecars, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.addcarbtn, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.acceptcarsbtn, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.logout, 2, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 147);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1068, 209);
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1065, 370);
             this.tableLayoutPanel1.TabIndex = 2;
+            // 
+            // browsecars
+            // 
+            this.browsecars.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.browsecars.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.browsecars.Font = new System.Drawing.Font("Unispace", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.browsecars.Image = ((System.Drawing.Image)(resources.GetObject("browsecars.Image")));
+            this.browsecars.Location = new System.Drawing.Point(4, 189);
+            this.browsecars.Margin = new System.Windows.Forms.Padding(4);
+            this.browsecars.Name = "browsecars";
+            this.browsecars.Size = new System.Drawing.Size(327, 177);
+            this.browsecars.TabIndex = 3;
+            this.browsecars.Text = "znajdź pojazd";
+            this.browsecars.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.browsecars.UseVisualStyleBackColor = true;
+            this.browsecars.Click += new System.EventHandler(this.browsecars_Click);
+            // 
+            // addcarbtn
+            // 
+            this.addcarbtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.addcarbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addcarbtn.Font = new System.Drawing.Font("Unispace", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addcarbtn.Image = ((System.Drawing.Image)(resources.GetObject("addcarbtn.Image")));
+            this.addcarbtn.Location = new System.Drawing.Point(4, 4);
+            this.addcarbtn.Margin = new System.Windows.Forms.Padding(4);
+            this.addcarbtn.Name = "addcarbtn";
+            this.addcarbtn.Size = new System.Drawing.Size(327, 177);
+            this.addcarbtn.TabIndex = 0;
+            this.addcarbtn.Text = "dodaj pojazd";
+            this.addcarbtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.addcarbtn.UseVisualStyleBackColor = true;
+            // 
+            // acceptcarsbtn
+            // 
+            this.acceptcarsbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.acceptcarsbtn.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.acceptcarsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.acceptcarsbtn.Font = new System.Drawing.Font("Unispace", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.acceptcarsbtn.ForeColor = System.Drawing.Color.Black;
+            this.acceptcarsbtn.Image = ((System.Drawing.Image)(resources.GetObject("acceptcarsbtn.Image")));
+            this.acceptcarsbtn.Location = new System.Drawing.Point(359, 4);
+            this.acceptcarsbtn.Margin = new System.Windows.Forms.Padding(4);
+            this.acceptcarsbtn.Name = "acceptcarsbtn";
+            this.acceptcarsbtn.Size = new System.Drawing.Size(347, 177);
+            this.acceptcarsbtn.TabIndex = 1;
+            this.acceptcarsbtn.Text = "zarządzaj ofertami";
+            this.acceptcarsbtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.acceptcarsbtn.UseVisualStyleBackColor = true;
+            this.acceptcarsbtn.Click += new System.EventHandler(this.acceptcarsbtn_Click);
             // 
             // logout
             // 
@@ -73,47 +125,15 @@
             this.logout.Font = new System.Drawing.Font("Unispace", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.logout.Image = ((System.Drawing.Image)(resources.GetObject("logout.Image")));
-            this.logout.Location = new System.Drawing.Point(716, 4);
+            this.logout.Location = new System.Drawing.Point(714, 189);
             this.logout.Margin = new System.Windows.Forms.Padding(4);
             this.logout.Name = "logout";
-            this.logout.Size = new System.Drawing.Size(348, 201);
+            this.logout.Size = new System.Drawing.Size(347, 177);
             this.logout.TabIndex = 2;
             this.logout.Text = "wyloguj";
             this.logout.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.logout.UseVisualStyleBackColor = true;
             this.logout.Click += new System.EventHandler(this.logout_Click);
-            // 
-            // addcar
-            // 
-            this.addcar.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.addcar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addcar.Font = new System.Drawing.Font("Unispace", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addcar.Image = ((System.Drawing.Image)(resources.GetObject("addcar.Image")));
-            this.addcar.Location = new System.Drawing.Point(4, 4);
-            this.addcar.Margin = new System.Windows.Forms.Padding(4);
-            this.addcar.Name = "addcar";
-            this.addcar.Size = new System.Drawing.Size(327, 201);
-            this.addcar.TabIndex = 0;
-            this.addcar.Text = "dodaj pojazd";
-            this.addcar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.addcar.UseVisualStyleBackColor = true;
-            // 
-            // sell
-            // 
-            this.sell.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.sell.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.sell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sell.Font = new System.Drawing.Font("Unispace", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sell.ForeColor = System.Drawing.Color.Black;
-            this.sell.Image = ((System.Drawing.Image)(resources.GetObject("sell.Image")));
-            this.sell.Location = new System.Drawing.Point(360, 4);
-            this.sell.Margin = new System.Windows.Forms.Padding(4);
-            this.sell.Name = "sell";
-            this.sell.Size = new System.Drawing.Size(347, 201);
-            this.sell.TabIndex = 1;
-            this.sell.Text = "zarządzaj ofertami";
-            this.sell.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.sell.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel2
             // 
@@ -148,6 +168,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Unispace", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ManagerPage";
             this.Text = "ManagerPage";
@@ -163,9 +184,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button logout;
-        private System.Windows.Forms.Button addcar;
-        private System.Windows.Forms.Button sell;
+        private System.Windows.Forms.Button addcarbtn;
+        private System.Windows.Forms.Button acceptcarsbtn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label welcomemessage;
+        private System.Windows.Forms.Button browsecars;
     }
 }

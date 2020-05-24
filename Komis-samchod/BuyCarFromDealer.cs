@@ -28,6 +28,22 @@ namespace Komis_samchod
 
         private void showcarsbtn_Click(object sender, EventArgs e)
         {
+            int parsedValue;
+            if (!int.TryParse(txt_costmin.Text, out parsedValue) && !(txt_costmin.Text == ""))
+            {
+                MessageBox.Show("Cena powinna być liczbą");
+                return;
+            }
+            if (!int.TryParse(txt_costmax.Text, out parsedValue) && !(txt_costmax.Text == ""))
+            {
+                MessageBox.Show("Cena powinna być liczbą");
+                return;
+            }
+            if (!int.TryParse(txt_year.Text, out parsedValue) && !(txt_year.Text == ""))
+            {
+                MessageBox.Show("Rok powinien być liczbą");
+                return;
+            }
             using (SqlConnection con = new SqlConnection(cs))
             {
                 con.Open();
@@ -64,11 +80,6 @@ namespace Komis_samchod
                 else
                     cmd.Parameters.AddWithValue("@pricemax", 99999999);
 
-
-
-
-
-                //cmd.Parameters.AddWithValue("@price", txt.Text);
                 SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                 DataTable dtbl = new DataTable();
                 adapt.Fill(dtbl);
@@ -79,7 +90,12 @@ namespace Komis_samchod
 
         private void buycarbtn_Click(object sender, EventArgs e)
         {
-
+            int parsedValue;
+            if (!int.TryParse(txt_id.Text, out parsedValue))
+            {
+                MessageBox.Show("Id pojazdu powinno być liczbą");
+                return;
+            }
             using (SqlConnection con = new SqlConnection(cs))
             {
                 con.Open();
@@ -112,6 +128,24 @@ namespace Komis_samchod
                     MessageBox.Show("Wprowadź id pojazdu, który chcesz kupić");
 
 
+            }
+        }
+
+        private void backtbn_Click(object sender, EventArgs e)
+        {
+            if (user.mod == true)
+            {
+                ManagerPage menu = new ManagerPage();
+                menu.user = user;
+                menu.Show();
+                this.Close();
+            }
+            if (user.mod == false)
+            {
+                MainUserPage menu = new MainUserPage();
+                menu.user = user;
+                menu.Show();
+                this.Close();
             }
         }
     }

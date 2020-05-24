@@ -35,3 +35,5 @@ G:\Folder Kuby\Studia\Rok II sem.2\Bazy Danych\projekt\Komis-Samochodowy\Komis-s
 G:\Folder Kuby\Studia\Rok II sem.2\Bazy Danych\projekt\Komis-Samochodowy\Komis-samchod\obj\Debug\Komis-samchod.csproj.CopyComplete
 G:\Folder Kuby\Studia\Rok II sem.2\Bazy Danych\projekt\Komis-Samochodowy\Komis-samchod\obj\Debug\Komis_samchod.ConfirmPurchase.resources
 G:\Folder Kuby\Studia\Rok II sem.2\Bazy Danych\projekt\Komis-Samochodowy\Komis-samchod\obj\Debug\Komis_samchod.ShowTransactions.resources
+G:\Folder Kuby\Studia\Rok II sem.2\Bazy Danych\projekt\Komis-Samochodowy\Komis-samchod\obj\Debug\Komis_samchod.AcceptCars.resources
+G:\Folder Kuby\Studia\Rok II sem.2\Bazy Danych\projekt\Komis-Samochodowy\Komis-samchod\obj\Debug\Komis_samchod.AccountDetails.resources

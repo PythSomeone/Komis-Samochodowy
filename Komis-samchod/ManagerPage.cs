@@ -54,5 +54,21 @@ namespace Komis_samchod
             lo.Show();
             this.Close();
         }
+
+        private void acceptcarsbtn_Click(object sender, EventArgs e)
+        {
+            AcceptCars accept = new AcceptCars();
+            accept.user = user;
+            accept.Show();
+            this.Close();
+        }
+
+        private void browsecars_Click(object sender, EventArgs e)
+        {
+            BuyCarFromDealer browse = new BuyCarFromDealer();
+            browse.user = user;
+            browse.Show();
+            this.Close();
+        }
     }
 }

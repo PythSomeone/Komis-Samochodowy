@@ -39,7 +39,6 @@ namespace Komis_samchod
                 int car_id = Convert.ToInt32(cartobuygrid.Rows[0].Cells["id"].Value);
                 int value = Convert.ToInt32(cartobuygrid.Rows[0].Cells["price"].Value);
                 DateTime date = DateTime.Today;
-
                 SqlCommand cmd = new SqlCommand("INSERT INTO [transaction] (client_id, car_id, date, value, accepted) VALUES (@client_id,  @car_id, @date, @value, 1)", con);
                 cmd.Parameters.AddWithValue("@client_id", user.id);
                 cmd.Parameters.AddWithValue("@car_id", car_id);
@@ -67,7 +66,6 @@ namespace Komis_samchod
                 {
                     MessageBox.Show(ex.Message);
                 }
-
                 if (user.mod == true)
                 {
                     ManagerPage menu = new ManagerPage();
@@ -82,6 +80,25 @@ namespace Komis_samchod
                     menu.Show();
                     this.Close();
                 }
+            }
+        }
+
+
+        private void backbtn_Click(object sender, EventArgs e)
+        {
+            if (user.mod == true)
+            {
+                ManagerPage menu = new ManagerPage();
+                menu.user = user;
+                menu.Show();
+                this.Close();
+            }
+            if (user.mod == false)
+            {
+                MainUserPage menu = new MainUserPage();
+                menu.user = user;
+                menu.Show();
+                this.Close();
             }
         }
     }

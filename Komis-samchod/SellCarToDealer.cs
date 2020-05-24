@@ -32,6 +32,22 @@ namespace Komis_samchod
 
         private void submitbtn_Click(object sender, EventArgs e)
         {
+            if (txt_brand.Text == "" || txt_model.Text == "" || txt_year.Text == "" || txt_color.Text == "" || txt_price.Text == "")
+            {
+                MessageBox.Show("Uzupełnij wszystkie dane!");
+                return;
+            }
+            int parsedValue;
+            if (!int.TryParse(txt_year.Text, out parsedValue))
+            {
+                MessageBox.Show("Rok powinnien być liczbą");
+                return;
+            }
+            if (!int.TryParse(txt_price.Text, out parsedValue))
+            {
+                MessageBox.Show("Cena powinna być liczbą");
+                return;
+            }
             using (SqlConnection con = new SqlConnection(cs))
             {
                 con.Open();
@@ -58,7 +74,6 @@ namespace Komis_samchod
                 adapt.Fill(dtbl);
                 int car_id = Convert.ToInt32(dtbl.Rows[0][0]);
                 car_id -= 1;
-                MessageBox.Show("" + car_id);
                 
                 SqlCommand cmds = new SqlCommand("INSERT INTO [transaction] (client_id, car_id, date, value, type) VALUES ( CONVERT(INT, @client_id), CONVERT(INT, @car_id), @date, CONVERT(INT, @value) , 0)", con);
                 cmds.Parameters.AddWithValue("@client_id", user.id);
@@ -74,20 +89,25 @@ namespace Komis_samchod
                     MessageBox.Show(ex.Message);
                 }
                 
-                if (user.mod == true)
-                {
-                    ManagerPage menu = new ManagerPage();
-                    menu.user = user;
-                    menu.Show();
-                    this.Close();
-                }
-                if (user.mod == false)
-                {
-                    MainUserPage menu = new MainUserPage();
-                    menu.user = user;
-                    menu.Show();
-                    this.Close();
-                }
+
+            }
+        }
+
+        private void backtbn_Click(object sender, EventArgs e)
+        {
+            if (user.mod == true)
+            {
+                ManagerPage menu = new ManagerPage();
+                menu.user = user;
+                menu.Show();
+                this.Close();
+            }
+            if (user.mod == false)
+            {
+                MainUserPage menu = new MainUserPage();
+                menu.user = user;
+                menu.Show();
+                this.Close();
             }
         }
     }

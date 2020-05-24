@@ -70,7 +70,7 @@
             // 
             // txt_brand
             // 
-            this.txt_brand.BackColor = System.Drawing.Color.White;
+            this.txt_brand.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txt_brand.Location = new System.Drawing.Point(12, 375);
             this.txt_brand.Name = "txt_brand";
             this.txt_brand.Size = new System.Drawing.Size(100, 20);
@@ -78,6 +78,7 @@
             // 
             // txt_model
             // 
+            this.txt_model.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txt_model.Location = new System.Drawing.Point(118, 375);
             this.txt_model.Name = "txt_model";
             this.txt_model.Size = new System.Drawing.Size(100, 20);
@@ -85,6 +86,7 @@
             // 
             // txt_year
             // 
+            this.txt_year.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txt_year.Location = new System.Drawing.Point(224, 375);
             this.txt_year.Name = "txt_year";
             this.txt_year.Size = new System.Drawing.Size(100, 20);
@@ -92,6 +94,7 @@
             // 
             // txt_color
             // 
+            this.txt_color.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txt_color.Location = new System.Drawing.Point(330, 375);
             this.txt_color.Name = "txt_color";
             this.txt_color.Size = new System.Drawing.Size(100, 20);
@@ -99,6 +102,7 @@
             // 
             // txt_costmin
             // 
+            this.txt_costmin.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txt_costmin.Location = new System.Drawing.Point(436, 375);
             this.txt_costmin.Name = "txt_costmin";
             this.txt_costmin.Size = new System.Drawing.Size(79, 20);
@@ -166,7 +170,7 @@
             // 
             // txt_id
             // 
-            this.txt_id.BackColor = System.Drawing.Color.White;
+            this.txt_id.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txt_id.Location = new System.Drawing.Point(172, 421);
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(100, 20);
@@ -174,6 +178,7 @@
             // 
             // txt_costmax
             // 
+            this.txt_costmax.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txt_costmax.Location = new System.Drawing.Point(543, 376);
             this.txt_costmax.Name = "txt_costmax";
             this.txt_costmax.Size = new System.Drawing.Size(73, 20);
@@ -209,6 +214,7 @@
             this.backtbn.TabIndex = 17;
             this.backtbn.Text = "wróć";
             this.backtbn.UseVisualStyleBackColor = true;
+            this.backtbn.Click += new System.EventHandler(this.backtbn_Click);
             // 
             // BuyCarFromDealer
             // 
@@ -233,6 +239,7 @@
             this.Controls.Add(this.txt_brand);
             this.Controls.Add(this.showcarsbtn);
             this.Controls.Add(this.datagrid);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BuyCarFromDealer";
             this.Text = "BuyCarFromDealer";
             this.Load += new System.EventHandler(this.BuyCarFromDealer_Load);

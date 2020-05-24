@@ -132,6 +132,12 @@
       <DependentUpon>ShowTransactions.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
+    <EmbeddedResource Include="AcceptCars.resx">
+      <DependentUpon>AcceptCars.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccountDetails.resx">
+      <DependentUpon>AccountDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BuyCarFromDealer.resx">
       <DependentUpon>BuyCarFromDealer.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,6 +161,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SellCarToDealer.resx">
       <DependentUpon>SellCarToDealer.cs</DependentUpon>
@@ -187,6 +194,7 @@
     <Content Include="Resources\icons\commerce %281%29.png" />
     <Content Include="Resources\icons\multimedia-option %281%29.png" />
     <Content Include="Resources\icons\multimedia-option.png" />
+    <None Include="Resources\icons\quit.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
