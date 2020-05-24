@@ -26,9 +26,11 @@ namespace Komis_samchod
             {
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("SELECT * FROM [transaction] WHERE client_id = @client_id", con);
-                cmd.Parameters.AddWithValue("@client_id", user.id);
-
+                SqlCommand cmd = new SqlCommand("SELECT * FROM [transaction] WHERE client_id LIKE CONVERT(varchar(50), @client_id)", con);
+                if(user.mod == false)
+                    cmd.Parameters.AddWithValue("@client_id", user.id);
+                if(user.mod == true)
+                    cmd.Parameters.AddWithValue("@client_id", "%");
                 try
                 {
                     cmd.ExecuteNonQuery();

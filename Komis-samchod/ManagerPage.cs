@@ -70,5 +70,13 @@ namespace Komis_samchod
             browse.Show();
             this.Close();
         }
+
+        private void showtrans_Click(object sender, EventArgs e)
+        {
+            ShowTransactions trans = new ShowTransactions();
+            trans.user = user;
+            trans.Show();
+            this.Close();
+        }
     }
 }

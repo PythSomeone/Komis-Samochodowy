@@ -37,6 +37,7 @@
             // 
             // cartobuygrid
             // 
+            this.cartobuygrid.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.cartobuygrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.cartobuygrid.Location = new System.Drawing.Point(25, 45);
             this.cartobuygrid.Name = "cartobuygrid";

@@ -37,6 +37,7 @@
             this.logout = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.welcomemessage = new System.Windows.Forms.Label();
+            this.showtrans = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +57,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.Controls.Add(this.showtrans, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.browsecars, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.addcarbtn, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.acceptcarsbtn, 1, 0);
@@ -158,6 +160,22 @@
             this.welcomemessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.welcomemessage.Click += new System.EventHandler(this.welcomemessage_Click);
             // 
+            // showtrans
+            // 
+            this.showtrans.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.showtrans.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.showtrans.Font = new System.Drawing.Font("Unispace", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showtrans.Image = ((System.Drawing.Image)(resources.GetObject("showtrans.Image")));
+            this.showtrans.Location = new System.Drawing.Point(714, 4);
+            this.showtrans.Margin = new System.Windows.Forms.Padding(4);
+            this.showtrans.Name = "showtrans";
+            this.showtrans.Size = new System.Drawing.Size(327, 177);
+            this.showtrans.TabIndex = 4;
+            this.showtrans.Text = "pokaż transakcje";
+            this.showtrans.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.showtrans.UseVisualStyleBackColor = true;
+            this.showtrans.Click += new System.EventHandler(this.showtrans_Click);
+            // 
             // ManagerPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -189,5 +207,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label welcomemessage;
         private System.Windows.Forms.Button browsecars;
+        private System.Windows.Forms.Button showtrans;
     }
 }

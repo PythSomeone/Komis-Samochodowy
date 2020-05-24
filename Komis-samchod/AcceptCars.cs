@@ -26,7 +26,7 @@ namespace Komis_samchod
             {
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("SELECT * FROM [transaction]", con);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM [transaction] WHERE type = 0", con);
 
                 try
                 {
